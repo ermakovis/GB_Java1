@@ -38,7 +38,7 @@ public abstract class Animal {
         } else if (this.swimLimit == 0) {
             System.out.println(name + " can't swim");
         } else
-            System.out.printf("This %s can't swim that far. Limit is %.3f m\n", name, this.jumpLimit);
+            System.out.printf("This %s can't swim that far. Limit is %.3f m\n", name, this.swimLimit);
     }
 
     public abstract void run(double distance);

@@ -19,6 +19,6 @@ public class Cat extends Animal {
 
     @Override
     public void swim (double distance) {
-        this.actionSwim(distance, "Cat");
+        System.out.println("Cats don't swim");
     }
 }
