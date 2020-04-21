@@ -16,7 +16,6 @@ public class Main {
             dogs[i].jump(2);
             dogs[i].swim(10);
             dogs[i].swim(30);
-            System.out.println("-------------------------");
         }
         Cat cat = new Cat();
         cat.swim(10);

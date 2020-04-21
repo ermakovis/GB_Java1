@@ -6,19 +6,4 @@ public class Bird extends Animal {
     public Bird () {
         super(5, 0.2, 0);
     }
-
-    @Override
-    public void run (double distance) {
-        this.actionRun(distance, "Bird");
-    }
-
-    @Override
-    public void jump (double distance) {
-        this.actionJump(distance, "Bird");
-    }
-
-    @Override
-    public void swim (double distance) {
-        System.out.println("Birds can't swim");
-    }
 }

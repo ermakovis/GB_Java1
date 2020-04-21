@@ -2,6 +2,8 @@ package Lesson5.Animal;
 
 import java.util.Random;
 
+// Третья версия, убрано переопредление методов, добавлен метод возвращаюй имя класса.
+// Самая короткая версия, но немного не соответствует духу урока.
 public abstract class Animal {
     protected double jumpLimit;
     protected double runLimit;
@@ -18,30 +20,34 @@ public abstract class Animal {
         return num + (random.nextDouble() - 0.5) * num;
     }
 
-    protected void actionRun (double distance, String name) {
+    public String getClassName() {
+        return this.getClass().getSimpleName();
+    }
+
+    public void run (double distance) {
         if (this.runLimit >= distance) {
-            System.out.println(name + " runs!");
+            System.out.println(this.getClassName() + " runs!");
+        } else if (this.runLimit == 0) {
+            System.out.println(this.getClassName() + " can't run");
         }  else
-            System.out.printf("This %s can't run that far. Limit is %.3f m\n", name, this.runLimit);
+            System.out.printf("This %s can't run that far. Limit is %.3f m\n", this.getClassName(), this.runLimit);
     }
 
-    protected void actionJump (double distance, String name) {
+    public void jump (double distance) {
         if (this.jumpLimit >= distance) {
-            System.out.println(name + " jumps!");
+            System.out.println(this.getClassName() + " jumps!");
+        } else if (this.jumpLimit == 0) {
+            System.out.println(this.getClassName() + " can't jump");
         }  else
-            System.out.printf("This %s can't jump that high. Limit is %.3f m\n", name, this.jumpLimit);
+            System.out.printf("This %s can't jump that high. Limit is %.3f m\n", this.getClassName(), this.jumpLimit);
     }
 
-    protected void actionSwim (double distance, String name) {
+    public void swim (double distance) {
         if (this.swimLimit >= distance) {
-            System.out.println(name + " swims!");
+            System.out.println(this.getClassName() + " swims!");
         } else if (this.swimLimit == 0) {
-            System.out.println(name + " can't swim");
+            System.out.println(this.getClassName() + " can't swim");
         } else
-            System.out.printf("This %s can't swim that far. Limit is %.3f m\n", name, this.swimLimit);
+            System.out.printf("This %s can't swim that far. Limit is %.3f m\n", this.getClassName(), this.swimLimit);
     }
-
-    public abstract void run(double distance);
-    public abstract void jump(double height);
-    public abstract void swim(double height);
 }

@@ -6,19 +6,4 @@ public class Cat extends Animal {
     public Cat () {
         super(200, 2, 0);
     }
-
-    @Override
-    public void run (double distance) {
-        this.actionRun(distance, "Сat");
-    }
-
-    @Override
-    public void jump (double distance) {
-        this.actionJump(distance, "Cat");
-    }
-
-    @Override
-    public void swim (double distance) {
-        System.out.println("Cats don't swim");
-    }
 }
